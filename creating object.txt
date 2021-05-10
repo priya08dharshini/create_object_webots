@@ -1,0 +1,35 @@
+creating object in webots:
+1.go to wizards in webot and create a project name.
+2. while opening select retangular arena 
+3.you will get rectangular area in your desktop.
+4. you can zoom in and out of the floor.
+   i.mouse wheel= zoom
+   ii.select object+left click= rotation
+   iii.select object+right click= translation
+5.left side you will see a scence tree.(each object is called node.
+6. go to rectangular arena.then,lets create an object.
+7.click rectangular arena and click the + sign in the top.(allows a new object)
+8.you will get a new window,select base nodes in that solids
+9.solid node is opened.then select that and go to children and add other shape.
+10.within shape make other sphere,double click on geomentry lets again select the sphere.
+11.under shape select apperence. click + or double click on geomentry
+12.select base node PBR appereance and click on add.
+13.under apperence we can change colour(red),and make roughnness=1 and metalness=0
+14.thus,we created an object
+ how to reuse the same shape:
+1.click on shape DEF= ball (give some name)
+2.on your boundary object under solid click + or double click
+3.select use node (ball) and click add
+4.under solid select physics ans double click
+5.select physics and click add
+
+
+recap:
+creating an object
+1.start with a solid node
+2.add a child node to give it shape
+3.use geomentry to choose the shape
+4.add apperence and modify it
+5.name the shape using DEF for reuse.
+6.use DEF shape as bounding objects
+7.add physics
