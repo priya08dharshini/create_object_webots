@@ -1,0 +1,124 @@
+#VRML_SIM R2021a utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation -0.23872931551109824 0.9671296517412745 0.08757026115299282 0.647499687740168
+  position 0.9041485103525121 0.34285851062182665 1.2585056550947826
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+}
+Robot {
+  translation 5.628699607996028e-06 -0.0002064484630153393 -1.404928804176397e-05
+  rotation 0.05215178675141318 0.9985349219500604 -0.0144291643840482 0.5411438647566753
+  children [
+    DEF body Transform {
+      translation 0 0.0415 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.08
+            radius 0.045
+          }
+        }
+      ]
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 5.391414112154287e-12
+        anchor 0.045 0.025 0
+      }
+      device [
+        RotationalMotor {
+          name "motor 1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.045 0.025 0
+        rotation 1.8238688910418635e-07 -1.8224170733574906e-07 0.9999999999999669 1.5700000000000323
+        children [
+          DEF wheel Shape {
+            appearance PBRAppearance {
+              baseColor 1 0 0
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.025
+            }
+          }
+        ]
+        boundingObject USE wheel
+        physics DEF wheel_physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 4.4810690486194374e-12
+        anchor -0.045 0.025 0
+      }
+      device [
+        RotationalMotor {
+          name "motor 2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.045 0.025 0
+        rotation -1.3877185071460684e-08 1.3866138694829646e-08 0.9999999999999999 1.5700000000000003
+        children [
+          USE wheel
+        ]
+        name "solid(1)"
+        boundingObject USE wheel
+        physics USE wheel_physics
+      }
+    }
+    Solid {
+      translation -0.015 0.07 0.05
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.005 0.005 0.005
+          }
+        }
+      ]
+      name "solid(3)"
+    }
+    Solid {
+      translation 0.015 0.07 0.045
+      children [
+        DEF eyes Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.005 0.005 0.005
+          }
+        }
+      ]
+      name "eyes"
+    }
+  ]
+  boundingObject USE body
+  physics Physics {
+  }
+  controller "drive_my_drive"
+}
